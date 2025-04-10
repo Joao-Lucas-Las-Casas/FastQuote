@@ -1,4 +1,4 @@
-# Documentação do Sistema – FastQuote
+# Documentação do Sistema
 
 ## SUMÁRIO
 * [Dados do Cliente](#dados-do-cliente)
