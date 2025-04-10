@@ -1,141 +1,166 @@
-# FastQuote - Sistema de Cotação
+# Documentação do Sistema – FastQuote
 
 ## SUMÁRIO
-
-- [Dados do Cliente](#dados-do-cliente)
-- [Equipe de Desenvolvimento](#equipe-de-desenvolvimento)
-- [Introdução](#introdução)
-- [Objetivo](#objetivo)
-- [Escopo](#escopo)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Fluxo Geral](#fluxo-geral)
-- [Arquitetura do Sistema](#arquitetura-do-sistema)
-- [Conclusão](#conclusão)
-
----
+* [Dados do Cliente](#dados-do-cliente)
+* [Equipe de Desenvolvimento](#equipe-de-desenvolvimento)
+1. [Introdução](#1-introdução)
+2. [Objetivo](#2-objetivo)
+3. [Escopo](#3-escopo)
+4. [Backlogs do Produto](#4-backlogs-do-produto)
+5. [Cronograma](#5-cronograma)
+6. [Materiais e Métodos](#6-materiais-e-métodos)
+7. [Resultados](#7-resultados)
+8. [Conclusão](#8-conclusão)
+9. [Homologação do MVP junto ao cliente](#9-homologação-do-mvp-junto-ao-cliente)
+10. [Divulgação](#10-divulgação)
+11. [Carta de Apresentação](#11-carta-de-apresentação)
+12. [Carta de Autorização](#12-carta-de-autorização)
+13. [Relato individual do processo](#13-relato-individual-do-processo)
 
 ## Dados do Cliente
 
-- **Título do Projeto:** FastQuote – Solução rápida em cotações via WebSite.
-- **Cliente:** AguiaFix – A Solução Em Fixadores
-- **CNPJ/CPF:** 06.886.538/0001-21
-- **Contato:** Vinicius Mastrangelo Dias
-- **Email do Contato:** Vendas2@aguiafix.com.br
+Título do Projeto: FastQuote – Solução rápida em cotações via WebSite
 
----
+Cliente: AguiaFix – A Solução Em Fixadores
+
+CNPJ/CPF: 06.886.538/0001-21
+
+Contato: Vinicius Mastrangelo Dias
+
+Email do contato: Vendas2@aguiafix.com.br
 
 ## Equipe de Desenvolvimento
 
-| Nome Completo             | Curso                                     | Disciplina                      |
-|---------------------------|-------------------------------------------|---------------------------------|
-| Vinicius Mastrangelo Dias  | Análise e Desenvolvimento de Sistemas     | Programação Orientada a Objetos |
-| João Lucas Las Casas       | Análise e Desenvolvimento de Sistemas     | Programação Orientada a Objetos |
+| Nome completo             | Curso                              | Disciplina                        |
+|---------------------------|-------------------------------------|-----------------------------------|
+| Vinicius Mastrangelo Dias | Análise e Desenvolvimento de Sistemas | Programação Orientada a Objetos |
+| João Lucas Las Casas      | Análise e Desenvolvimento de Sistemas | Programação Orientada a Objetos |
 
----
+**Professor Orientador:** Kesede Rodrigues Julio
 
-## Introdução
+## 1. Introdução
 
-A área de vendas da AguiaFix enfrenta desafios no processo de recebimento e processamento de cotações enviadas por clientes online. Atualmente, os clientes enviam manualmente a lista de itens desejados via WhatsApp, o que exige uma interação inicial extensa entre vendedores e clientes para coletar todas as informações necessárias. Isso torna o processo demorado e pode impactar negativamente a conversão de vendas.
+A área de vendas da AguiaFix enfrenta desafios no processo de recebimento e processamento de cotações enviadas por clientes online. Atualmente, os clientes enviam suas listas de itens via WhatsApp, exigindo uma longa troca de mensagens para coleta de dados. Isso torna o processo lento e propenso a falhas. 
+O projeto FastQuote resolve esse problema oferecendo um formulário estruturado no site da AguiaFix, permitindo que o cliente insira as informações de forma clara, rápida e precisa. Este sistema utiliza tecnologias modernas para automatizar a geração da cotação, verificar estoque em uma planilha Excel e gerar um PDF que será enviado automaticamente para o setor de vendas.
 
-O projeto **FastQuote** busca solucionar esse problema ao introduzir uma ferramenta digital no site da empresa, proporcionando maior agilidade e eficiência na geração de cotações.
+## 2. Objetivo
 
----
+Automatizar o processo de cotação de produtos da AguiaFix para que os clientes possam preencher um formulário diretamente no site, sem depender de troca de mensagens com o vendedor.
+Isso reduz o tempo de resposta, organiza os dados recebidos e melhora a taxa de conversão de cotações em vendas.
 
-## Objetivo
+## 3. Escopo
 
-Desenvolver uma aba no site da AguiaFix para permitir que os clientes preencham suas solicitações de cotação de forma estruturada, otimizando o tempo de resposta da equipe de vendas e aumentando a conversão de vendas.
+**Escopo incluído:**
+- Formulário dividido em etapas: Empresa, Cotação, Itens e Revisão
+- Campos validados com JavaScript, máscaras e escolhas guiadas
+- Geração de PDF no backend com os dados da cotação
+- Verificação dos itens com base na planilha de estoque
+- Armazenamento da cotação no banco de dados
+- Envio futuro via WhatsApp utilizando a API do 360dialog
 
----
+**Escopo fora:**
+- Dashboard para histórico no frontend (por enquanto)
+- Login de administrador
+- Integração com ERP
 
-## Escopo
+## 4. Backlogs do Produto
 
-1. **Visão Geral:**  
-   O **FastQuote** é uma funcionalidade que será implementada no site da AguiaFix para agilizar o processo de cotação de produtos. Atualmente, os clientes enviam pedidos de forma manual pelo WhatsApp, resultando em trocas demoradas de mensagens. O **FastQuote** permitirá que os clientes preencham suas solicitações diretamente no site, otimizando o fluxo de trabalho dos vendedores e aumentando a conversão de vendas.
+| ID  | Título (Resumo)                       | Descrição                                                                                    | Status       | Prioridade | Entrega |
+|-----|---------------------------------------|----------------------------------------------------------------------------------------------|--------------|------------|---------|
+| A01 | Escolha do Projeto                    | Definição do tema e nome do projeto junto ao cliente                                         | Concluído    | Alta       | 20/03   |
+| A02 | Planejamento Inicial                  | Organização das etapas do projeto e primeiras ideias no Jira                                 | Concluído    | Alta       | 20/03   |
+| A03 | Primeira Reunião com Cliente          | Levantamento de requisitos e entendimento do problema                                        | Concluído    | Alta       | 20/03   |
+| B01 | Estrutura do Formulário Multietapas   | Criar formulário dividido em 4 etapas com barra de progresso                                 | Concluído    | Alta       | 10/04   |
+| B02 | Validação de campos obrigatórios      | Impedir avanço entre etapas caso campos estejam vazios ou inválidos                          | Concluído    | Alta       | 10/04   |
+| B03 | Máscara para CNPJ e Telefone          | Aplicar máscara automática nos campos CNPJ e telefone                                        | Concluído    | Média      | 10/04   |
+| B04 | Dropdown com itens da planilha        | Adicionar campo de seleção de itens com base na planilha de estoque                          | Concluído    | Alta       | 10/04   |
+| B05 | Feedback visual em campos inválidos   | Mostrar borda vermelha e mensagens nos campos obrigatórios                                   | Concluído    | Alta       | 10/04   |
+| B06 | Barra de Progresso                    | Indicar etapa atual do formulário com barra visual                                           | Concluído    | Média      | 10/04   |
+| B07 | Feedback de envio com sucesso         | Mostrar alerta animado e resetar o formulário após envio                                     | Concluído    | Média      | 10/04   |
+| B08 | Responsividade para Mobile            | Adaptar o formulário para diferentes tamanhos de tela                                        | Concluído    | Alta       | 10/04   |
+| B09 | Campo de Comentários                  | Adicionar campo de texto livre para observações na aba de Itens                              | Concluído    | Média      | 10/04   |
+| B10 | Ajustes visuais e melhorias gerais    | Alinhamentos, espaçamentos, melhorias visuais e foco em UX                                   | Em andamento | Média      | 17/04   |
+| C01 | Endpoint de Recebimento do Formulário | Backend REST que recebe e valida os dados da cotação                                         | Em andamento | Alta       | 17/04   |
+| C02 | Leitura da Planilha estoque.xlsx      | Verifica itens e quantidades disponíveis para resposta dinâmica                              | Em andamento | Alta       | 17/04   |
+| C03 | Geração de PDF com status de itens    | PDF detalhado gerado no backend com dados da cotação e análise de estoque                    | Em andamento | Alta       | 17/04   |
+| C04 | Salvar Cotação no Banco de Dados      | Salvar cotação com vínculo entre cliente e itens no MySQL usando JPA                         | Em andamento | Alta       | 17/04   |
+| C05 | Armazenamento de PDF no Disco         | PDF salvo automaticamente em /cotacoes/ com ID da cotação                                    | Em andamento | Média      | 17/04   |
+| C06 | Histórico de Cotações                 | Registro com data/hora e dados para controle de cotações                                     | Em andamento | Média      | 24/04   |
+| C07 | Exibição do Histórico                 | Endpoint GET para visualizar histórico no painel do sistema                                  | Em andamento | Média      | 24/04   |
+| C08 | Envio do PDF via WhatsApp             | PDF enviado automaticamente ao grupo de vendedores usando API 360dialog                      | Planejado    | Alta       | 15/05   |
+| C09 | Envio por E-mail ou Link ao Cliente   | PDF poderá ser enviado também para o cliente por e-mail ou link                              | Planejado    | Média      | 15/05   |
+| C10 | Dashboard para Vendedores (Admin)     | Painel administrativo com lista, filtros e controle de cotações                              | Planejado    | Baixa      | 05/06   |
+| D01 | Semana da Tecnologia                  | Evento de apresentação intermediária para testes e feedbacks                                 | Planejado    | Média      | 15/05   |
+| D02 | FENETEC – Feira de Negócios           | Apresentação final do projeto com banner e funcionalidade rodando                            | Planejado    | Alta       | 05/06   |
 
-2. **Objetivos do Projeto:**
-    - Criar uma aba específica no site da AguiaFix para receber cotações de forma estruturada.
-    - Reduzir o tempo de resposta entre a solicitação do cliente e o retorno do vendedor.
-    - Melhorar a organização das cotações, eliminando a necessidade de interações manuais extensas.
-    - Aumentar a taxa de conversão de cotações para vendas, facilitando o fechamento do negócio.
+## 5. Cronograma
 
-3. **Escopo Funcional:**
-    - **Funcionalidades para os Clientes:**
-        - Acesso a uma aba exclusiva para cotação no site.
-        - Formulário estruturado para preenchimento com os seguintes campos:
-            - Itens desejados (pronta entrega e encomenda).
-            - Quantidade de cada item.
-            - Prazo máximo que o cliente pode aguardar.
-            - Informações adicionais relevantes.
-        - Indicação da disponibilidade dos itens em estoque e prazos de entrega estimados.
-        - Revisão da cotação antes do envio.
-        - Envio automático da cotação via WhatsApp para o setor de vendas.
+| Entrega      | Data      | Descrição                                                              |
+|--------------|-----------|------------------------------------------------------------------------|
+| Entrega 1    | 20/03/2025| Escolha do projeto, planejamento inicial, primeira reunião com cliente |
+| Entrega 2    | 10/04/2025| Entrega de todos os itens do frontend                                  |
+| Entrega 3    | 17/04/2025| Primeira parte do backend (endpoints, leitura da planilha, PDF, banco) |
+| Entrega 4    | 24/04/2025| Continuação do backend (histórico, exibição)                           |
+| SemanaTec    | 15/05/2025| Apresentação intermediária do sistema                                  |
+| FENETEC      | 05/06/2025| Apresentação final com o sistema completo funcionando                  |
 
-    - **Funcionalidades para os Vendedores:**
-        - Recebimento automático da cotação com todas as informações preenchidas pelo cliente.
-        - Acesso a um painel de controle (caso necessário) para organizar e priorizar cotações.
+## 6. Materiais e Métodos
 
----
+### Modelagem do Sistema
 
-## Tecnologias Utilizadas
+- Diagrama de Entidade Relacionamento (MER): elaborado com base nas entidades `Cotacao`, `Item`, `Historico` e seus relacionamentos;
+- Diagrama de Casos de Uso: descrevendo o fluxo de interação entre cliente e sistema;
 
-- **Frontend:**
-    - HTML, CSS, JavaScript
-    - Tailwind CSS (Estilização responsiva e moderna)
-    - Choices.js (Para dropdowns de seleção)
-    - Flatpickr (Para seleção de datas)
+### Tecnologias Utilizadas
 
-- **Backend:**
-    - Java 17+
-    - Spring Boot (Framework principal do backend)
-    - Apache POI (Para ler planilhas .xlsx com os dados de estoque)
-    - OpenPDF (Para gerar arquivos PDF com o status da cotação)
-    - MySQL (Para armazenar logs, históricos ou informações de usuários)
+**Frontend**
+- HTML, CSS, JavaScript
+- TailwindCSS – Estilização responsiva e moderna
+- Choices.js – Dropdown estilizado e com busca
+- Flatpickr – Seleção de datas estilizada
 
----
+**Backend**
+- Java
+- Spring Boot – Estrutura principal do backend
+- Apache POI – Leitura da planilha Excel com estoque
+- OpenPDF – Geração do PDF da cotação
+- MySQL – Armazenamento das cotações e histórico
+- JPA / Hibernate – Persistência de dados
 
-## Fluxo Geral
+**Ferramentas de Apoio**
+- WebStorm – Frontend
+- IntelliJ IDEA – Backend
+- Jira – Organização de tarefas e cronograma
 
-1. O **usuário** acessa a interface web e preenche o formulário de cotação no frontend.
-2. Ao clicar no botão "Enviar", os dados são validados no frontend.
-3. Se os dados forem válidos, uma requisição **POST** é enviada ao backend.
-4. O backend processa os dados, gera um PDF e envia via WhatsApp.
-5. O usuário é redirecionado para a tela de confirmação com a mensagem de sucesso.
+## 7. Resultados
 
----
+**Conteúdo a ser preenchido após homologação e testes finais.**
 
-## Arquitetura do Sistema
+## 8. Conclusão
 
-### Camada de Apresentação (Frontend):
-- **Responsabilidades:**
-    - Interface onde o cliente preenche o formulário de cotação.
-    - Validação dos dados antes de enviá-los ao backend.
-    - Exibição das respostas do servidor.
+**Conteúdo a ser preenchido após finalização de todas as entregas.**
 
-### Camada de Lógica de Negócio (Backend):
-- **Responsabilidades:**
-    - Receber e processar requisições HTTP do frontend.
-    - Implementar a lógica para comparar os dados com a planilha de estoque.
-    - Gerar PDFs e enviar via WhatsApp.
+## 9. Homologação do MVP junto ao cliente
 
-### Camada de Persistência (Banco de Dados):
-- **Responsabilidades:**
-    - Armazenar registros das cotações.
-    - Manter logs e históricos de cotações feitas.
+**Será preenchido após validação oficial com o cliente.**
 
-### Integração com API:
-- **WhatsApp Business API**: Envio de mensagens com o PDF em anexo.
+## 10. Divulgação
 
----
+**Conteúdo será preenchido com links e prints das redes sociais, LinkedIn e vídeo.**
 
-### **Componentes da Arquitetura**
+## 11. Carta de Apresentação
 
-- **Frontend**: Formulário interativo para entrada de dados.
-- **Backend**: Controladores (Controllers), Serviços (Services), Repositórios (Repositories).
-- **Integração com API**: Comunicação com a API do WhatsApp Business.
+**Será gerada e assinada conforme orientações do professor.**
 
----
+## 12. Carta de Autorização
 
-## Conclusão
+**Será preenchida e assinada pelo cliente após reunião de alinhamento.**
 
-O projeto **FastQuote** tem como objetivo automatizar o processo de cotação, proporcionando maior eficiência na interação entre clientes e vendedores da AguiaFix. Com isso, busca-se uma melhoria significativa no tempo de resposta e na taxa de conversão de cotações em vendas.
+## 13. Relato individual do processo
+
+**Espaço reservado para cada integrante inserir seu relato pessoal após finalização do projeto.**
+
+
+
+
 
