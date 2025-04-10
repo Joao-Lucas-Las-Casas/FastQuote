@@ -31,10 +31,10 @@ Email do contato: Vendas2@aguiafix.com.br
 
 ## Equipe de Desenvolvimento
 
-| Nome completo              | Curso                                 | Disciplina                      |
-|----------------------------|---------------------------------------|---------------------------------|
-| Vinicius Mastrangelo Dias  | Análise e Desenvolvimento de Sistemas | Programação Orientada a Objetos |
-| João Lucas Las Casas Alves | Análise e Desenvolvimento de Sistemas | Programação Orientada a Objetos |
+| Nome completo              | Curso                                 | Disciplina                              |
+|----------------------------|---------------------------------------|-----------------------------------------|
+| Vinicius Mastrangelo Dias  | Análise e Desenvolvimento de Sistemas | Programação Orientada a Objetos em java |
+| João Lucas Las Casas Alves | Análise e Desenvolvimento de Sistemas | Programação Orientada a Objetos em java |
 
 **Professor Orientador:** Kesede Rodrigues Julio
 
